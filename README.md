@@ -33,6 +33,8 @@ Live deployment: [`0xb8F972d56178804a56197E5F9b221C5AEfe2E325`](https://explorer
 
 Machine-readable submission evidence: [`verification/e2e-summary.json`](verification/e2e-summary.json).
 
+Live frontend: [`https://patchlineage.pages.dev/`](https://patchlineage.pages.dev/). Production HTTP, logo, contract configuration, and live 8-node UI readback are recorded in the [Cloudflare production verification](verification/cloudflare-production.md).
+
 ## Deployment separation
 
 The contract has no deployer ownership. The deployment address is configured in the frontend only through `VITE_CONTRACT_ADDRESS`. Product lifecycle roles derive from transaction senders after deployment.
