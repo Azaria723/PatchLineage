@@ -29,6 +29,8 @@ npm run build
 
 Target network: GenLayer StudioNet, chain ID `61999`. Contract runtime and test suite: `0.2.16`.
 
+Live deployment: [`0xb8F972d56178804a56197E5F9b221C5AEfe2E325`](https://explorer-studio.genlayer.com/address/0xb8F972d56178804a56197E5F9b221C5AEfe2E325). See the [StudioNet verification record](verification/studionet-verification.md) for finalized lifecycle and adversarial evidence.
+
 ## Deployment separation
 
 The contract has no deployer ownership. The deployment address is configured in the frontend only through `VITE_CONTRACT_ADDRESS`. Product lifecycle roles derive from transaction senders after deployment.

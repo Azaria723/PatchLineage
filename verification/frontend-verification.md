@@ -1,5 +1,7 @@
 # Frontend verification
 
+Configured StudioNet contract: `0xb8F972d56178804a56197E5F9b221C5AEfe2E325`.
+
 Date: 2026-09-25
 
 - Production command: `npm run build`
