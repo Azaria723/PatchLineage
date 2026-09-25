@@ -1,0 +1,54 @@
+{
+  "network": {
+    "name": "GenLayer StudioNet",
+    "chain_id": 61999,
+    "contract": "0xb8F972d56178804a56197E5F9b221C5AEfe2E325"
+  },
+  "immutable_fixture_commits": [
+    "84bc69a83d3f06067bdeb5e0640ccb2820b957a9",
+    "87375ab75d7dc1378bdfd285e600d64e610e5e6c"
+  ],
+  "actors": [
+    "0x67A1A08Fc4cf7D05c859d0d3D8398a3A30B1677e",
+    "0x7C87B10a3d43F3b3551414401F8b26B9F662bAB5"
+  ],
+  "final_counts": {
+    "node_count": 8,
+    "root_count": 3,
+    "certified_count": 2
+  },
+  "nodes": [
+    {"id": 0, "status": "CERTIFIED", "classification": "ROOT_VALID", "confidence": "HIGH"},
+    {"id": 1, "status": "CERTIFIED", "classification": "EQUIVALENT_FIX", "confidence": "HIGH", "parent": 0},
+    {"id": 2, "status": "REVIEWED", "classification": "PARTIAL_FIX", "confidence": "HIGH", "parent": 0},
+    {"id": 3, "status": "REVIEWED", "classification": "UNRELATED_CHANGE", "confidence": "HIGH", "parent": 0},
+    {"id": 4, "status": "REVIEWED", "classification": "RISKY_DIVERGENCE", "confidence": "HIGH", "parent": 0},
+    {"id": 5, "status": "REVIEWED", "classification": "INCONCLUSIVE", "confidence": "MEDIUM", "parent": 0},
+    {"id": 6, "status": "SOURCE_UNVERIFIED", "classification": "SOURCE_UNVERIFIED", "confidence": "LOW"},
+    {"id": 7, "status": "PENDING", "classification": "PENDING"}
+  ],
+  "transactions": {
+    "create_root": "0x7cdd60caaf697f03bf0a68a4e1e6c9440952a89d76c11c36119c3a8a7ec916dd",
+    "assess_root": "0x90c04b206e315ab6023079328e684986bfc2d27a95ce05c6f593fd7348c8e1f5",
+    "submit_equivalent": "0xb0d6896560759c6739ab58946e53e0cf725fd6e21276d90beea0522f693d5ea0",
+    "assess_equivalent": "0xd5b994ca711c108e34aa1cc077c804fe42d0b87be488bf6d23c06cb330172268",
+    "submit_partial": "0xe41b3ec1eff9264b6961232e2a664f2518d5ad0e82d209c079ab5c1cf05c033a",
+    "submit_unrelated": "0x777b632a09062a0768cbf4a8b9cc6d7407a5cb3aac24b64b4fc2b729824df65a",
+    "submit_risky": "0x15e66ff425a79a2c544077cae42c431fb377f8467d15e31b8c971de444ad27f5",
+    "assess_risky": "0x1b3225fe09f4ad332c4df68efffe45af75df7436c5c63f4b76f888723c1ab00c",
+    "submit_inconclusive": "0x88c78c21fe2671fce0c5e0cf2eea9b8e6de53588e6cf1b3f144cdfa98636d956",
+    "assess_inconclusive": "0x4685df72356199d21e61d1e423a1119bb982b0f85ae9113920ea397c96eaa2a6",
+    "submit_bad_digest": "0x3f6e5918179cb9afdd9f306aeb961737960c852d1e39020d940b73cc2f5997de",
+    "assess_bad_digest": "0x20f1d3b79f2fdc3506d6a49dddbaa00b22696866be83ab219fa0b67569680eca",
+    "pending_parent_guard": "0xfac6ce03018c7ed0888f34923923cabf336b0b23f071d8baca934f57640f170b",
+    "duplicate_pair_guard": "0x1be7fdbb11895e3f79ab1841dc6252dd19d83d708c1c1a9bc8d802c77c3dad8a",
+    "missing_parent_guard": "0xa649f083a33e8231a0330912426f78945a6746e60c677227a086d456c987f30f",
+    "invalid_input_guard": "0xdd6118c6d87f3f2e36610e584407711803f6c39d98d24ec177756e35a80e537c",
+    "missing_node_guard": "0x7b1908985120e35a41af2917931e356769d08c89ca443dc4666237b01ea4fb28"
+  },
+  "verification": {
+    "local_tests": "21 passed",
+    "frontend_build": "passed",
+    "live_ui_readback": "3 roots, 8 nodes, 2 certified; all node classifications matched authoritative state"
+  }
+}
