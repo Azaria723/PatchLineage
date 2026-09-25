@@ -1,8 +1,10 @@
 # Immutable fixture manifest
 
-Status: local byte commitments complete; immutable full commit pending the first public repository push.
+Status: public and immutable. Every fixture below is pinned to full commit
+`84bc69a83d3f06067bdeb5e0640ccb2820b957a9` in
+`Azaria723/PatchLineage`.
 
-All files under `fixtures/` are synthetic security examples created for reproducible testing. After the first push this file will record the full commit, byte length, Git blob SHA-1 and SHA-256 of every artifact.
+All files under `fixtures/` are synthetic security examples created for reproducible testing. Use owner `Azaria723`, repository `PatchLineage`, the full commit above and the canonical path shown below. The byte length, Git blob SHA-1 and SHA-256 commitments make every source independently reproducible.
 
 | Path | Bytes | Git blob SHA-1 | SHA-256 |
 |---|---:|---|---|

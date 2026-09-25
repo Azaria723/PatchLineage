@@ -15,7 +15,7 @@ PatchLineage binds exact immutable source pairs, asks GenLayer validators whethe
 
 ## Source policy
 
-The included fixtures are synthetic and public. They do not claim a real-world CVE. After the repository's first push, the fixture manifest will pin one immutable full commit and record exact byte commitments for StudioNet verification.
+The included fixtures are synthetic and public. They do not claim a real-world CVE. The [fixture manifest](verification/fixture-manifest.md) pins full commit `84bc69a83d3f06067bdeb5e0640ccb2820b957a9` and records exact byte commitments for StudioNet verification.
 
 ## Development
 
@@ -32,4 +32,3 @@ Target network: GenLayer StudioNet, chain ID `61999`. Contract runtime and test 
 ## Deployment separation
 
 The contract has no deployer ownership. The deployment address is configured in the frontend only through `VITE_CONTRACT_ADDRESS`. Product lifecycle roles derive from transaction senders after deployment.
-
