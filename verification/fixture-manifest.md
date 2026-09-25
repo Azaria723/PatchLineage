@@ -16,3 +16,13 @@ All files under `fixtures/` are synthetic security examples created for reproduc
 | `fixtures/partial-backport/after.py` | 183 | `58ce8d6e7c307eba95dfa9fa52fb0322e2ea2c7f` | `25b1be3a9b205f26996a3ad154a088ebff1439c54ec451189612936e97644ecb` |
 | `fixtures/unrelated-change/before.py` | 68 | `3fec61f3e6a82b22d660b316deb3264ad9fb46b0` | `1e339587c532657ed2832e66f97f43f97c5c973aae67f519a9c97f1d076b87a0` |
 | `fixtures/unrelated-change/after.py` | 67 | `afe4d1b219d77ee1b5a03da91cddb71e939c455c` | `74d413f959fa13a437f0d8bd2ec1a6f03b92802a3dd782fc9dc4d82ebd4b482b` |
+
+The adversarial semantic fixtures below are pinned to full commit
+`87375ab75d7dc1378bdfd285e600d64e610e5e6c` in the same repository.
+
+| Path | Bytes | Git blob SHA-1 | SHA-256 |
+|---|---:|---|---|
+| `fixtures/risky-divergence/before.py` | 193 | `7b07c416c283da7a7164720eca5d2bf453d2a0f2` | `88f09ce0b05f622f882905318674134ecbd8932ef2243ffa7bcf373fd98e439d` |
+| `fixtures/risky-divergence/after.py` | 232 | `beb13db5c146f79f2720bd8f85d046cb69c0c094` | `b08494eda07ed82776dbc41d461692001b676f1bf21f6c746685081f429c9612` |
+| `fixtures/inconclusive-change/before.py` | 211 | `3699cc9e99c73fa0336ce3ddd0411d99760f3def` | `34f2161db06267bf785a79cf787a5a337163961c1bdbc5dd93867b380572635c` |
+| `fixtures/inconclusive-change/after.py` | 153 | `dd50898c3af63b95e996b36d7c21e5a2cf5b3ec7` | `32405dadb2b4e7eb02745ef8242f2711f24ec1f671475b91e0cf6060f014d979` |

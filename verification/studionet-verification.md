@@ -39,3 +39,24 @@ All listed calls reached `FINALIZED`. During polling, StudioNet returned one tra
 - Reassessing terminal node `1` produced no state mutation.
 
 The live results demonstrate positive certification, sibling DAG branching, two distinct semantic failure classifications, rejected-parent isolation and terminal replay safety against publicly pinned byte-level evidence.
+
+## Extended adversarial run
+
+Additional immutable fixtures are pinned to commit `87375ab75d7dc1378bdfd285e600d64e610e5e6c`.
+
+| Operation | Transaction | Result |
+|---|---|---|
+| Submit risky divergence | [`0x15e6…27f5`](https://explorer-studio.genlayer.com/tx/0x15e66ff425a79a2c544077cae42c431fb377f8467d15e31b8c971de444ad27f5) | Node `4` appended |
+| Assess risky divergence | [`0x1b32…b00c`](https://explorer-studio.genlayer.com/tx/0x1b3225fe09f4ad332c4df68efffe45af75df7436c5c63f4b76f888723c1ab00c) | `RISKY_DIVERGENCE`, `HIGH`, `NEW_SECURITY_REGRESSION` |
+| Submit ambiguous adapter | [`0x88c7…d956`](https://explorer-studio.genlayer.com/tx/0x88c78c21fe2671fce0c5e0cf2eea9b8e6de53588e6cf1b3f144cdfa98636d956) | Node `5` appended |
+| Assess ambiguous adapter | [`0x4685…a2a6`](https://explorer-studio.genlayer.com/tx/0x4685df72356199d21e61d1e423a1119bb982b0f85ae9113920ea397c96eaa2a6) | `INCONCLUSIVE`, `MEDIUM`, `AMBIGUOUS_CHANGE` |
+| Submit tampered digest | [`0x3f6e…97de`](https://explorer-studio.genlayer.com/tx/0x3f6e5918179cb9afdd9f306aeb961737960c852d1e39020d940b73cc2f5997de) | Node `6` appended with an intentionally false digest |
+| Assess tampered digest | [`0x20f1…0eca`](https://explorer-studio.genlayer.com/tx/0x20f1d3b79f2fdc3506d6a49dddbaa00b22696866be83ab219fa0b67569680eca) | Failed closed as `SOURCE_UNVERIFIED` |
+| Create pending parent | [`0x6e1d…16e3`](https://explorer-studio.genlayer.com/tx/0x6e1d90775ea91e7a9bca88244bff62ae66333dc27aa1ae1a8e460a41f57b16e3) | Node `7` retained pending for parent-isolation proof |
+| Pending-parent guard | [`0xfac6…170b`](https://explorer-studio.genlayer.com/tx/0xfac6ce03018c7ed0888f34923923cabf336b0b23f071d8baca934f57640f170b) | Counters unchanged |
+| Duplicate-pair guard | [`0x1be7…dad8a`](https://explorer-studio.genlayer.com/tx/0x1be7fdbb11895e3f79ab1841dc6252dd19d83d708c1c1a9bc8d802c77c3dad8a) | Counters unchanged |
+| Missing-parent guard | [`0xa649…f30f`](https://explorer-studio.genlayer.com/tx/0xa649f083a33e8231a0330912426f78945a6746e60c677227a086d456c987f30f) | Counters unchanged |
+| Invalid-input guard | [`0xdd61…537c`](https://explorer-studio.genlayer.com/tx/0xdd6118c6d87f3f2e36610e584407711803f6c39d98d24ec177756e35a80e537c) | Counters unchanged |
+| Missing-node assessment guard | [`0x7b19…fb28`](https://explorer-studio.genlayer.com/tx/0x7b1908985120e35a41af2917931e356769d08c89ca443dc4666237b01ea4fb28) | Counters unchanged |
+
+Final authoritative counters after the extended run: nodes `8`, roots `3`, certified `2`. Nodes `4`, `5`, and `6` are respectively `REVIEWED`, `REVIEWED`, and `SOURCE_UNVERIFIED`; node `7` intentionally remains `PENDING` so the public state itself preserves the pending-parent conflict case.
